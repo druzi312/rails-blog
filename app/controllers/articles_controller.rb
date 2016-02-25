@@ -12,6 +12,8 @@ def show
 	@comment.article_id = @article.id
 end
 
+before_filter :require_login, only: [:new, :create, :destroy, :edit, :update]
+
 def new
 	@article = Article.new
 end
